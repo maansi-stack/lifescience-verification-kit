@@ -1,0 +1,47 @@
+{
+  "policy_version": "3.0.0",
+  "_note": "Edit this file, not the code, to change entitlement rules. Values marked ASSUMPTION need Safeguards/Legal confirmation before use.",
+  "retention_rank": {"ZERO_DATA_RETENTION": 0, "30_DAY_EPHEMERAL_NO_TRAIN": 1},
+  "verticals": {
+    "BIOTECH_RND":       {"required_credentials": ["ENTITY_VETTED", "BIOSECURITY_ATTESTATION"], "retention": "ZERO_DATA_RETENTION"},
+    "PHARMA_ENTERPRISE": {"required_credentials": ["ENTERPRISE_SSO", "BAA_SIGNED", "GXP_TENANT_FLAG"], "retention": "ZERO_DATA_RETENTION"},
+    "MEDTECH_DEVICES":   {"required_credentials": ["ENTERPRISE_SSO", "ISO_13485_SCOPE"], "retention": "ZERO_DATA_RETENTION"},
+    "GENOMICS_DX":       {"required_credentials": ["CLIA_CAP_CERT", "BAA_SIGNED"], "retention": "ZERO_DATA_RETENTION"},
+    "ACADEMIC_RESEARCH": {"required_credentials": ["INSTITUTIONAL_IDP", "ORCID_VERIFIED"], "retention": "30_DAY_EPHEMERAL_NO_TRAIN"}
+  },
+  "personas": {
+    "BENCH_SCIENTIST": {
+      "extra_credentials": ["PI_BIOSAFETY_ATTESTATION"],
+      "allowed_verticals": ["BIOTECH_RND", "PHARMA_ENTERPRISE", "GENOMICS_DX", "ACADEMIC_RESEARCH"],
+      "safeguard_profile": "BIO_RESEARCH_CALIBRATED", "audit_mode": "STANDARD_TELEMETRY",
+      "ux_guardrail": "DUAL_USE_TRANSPARENCY_BANNER", "retention_floor": null
+    },
+    "CLINICAL_TRIAL_MGR": {
+      "extra_credentials": ["IRB_PROTOCOL_REF"],
+      "allowed_verticals": ["PHARMA_ENTERPRISE", "BIOTECH_RND", "GENOMICS_DX"],
+      "safeguard_profile": "CLINICAL_SAFETY_STRICT", "audit_mode": "IMMUTABLE_GXP_LOG",
+      "ux_guardrail": "HUMAN_IN_LOOP_CLINICAL_GATE", "retention_floor": "ZERO_DATA_RETENTION"
+    },
+    "LAB_OPS_DIRECTOR": {
+      "extra_credentials": ["ADMIN_ROLE_BINDING"],
+      "allowed_verticals": ["BIOTECH_RND", "PHARMA_ENTERPRISE", "MEDTECH_DEVICES", "GENOMICS_DX", "ACADEMIC_RESEARCH"],
+      "safeguard_profile": "SOP_WORKFLOW_STANDARD", "audit_mode": "VERSIONED_SOP_AUDIT",
+      "ux_guardrail": "CONNECTOR_LEAST_PRIVILEGE_PROMPT", "retention_floor": null
+    },
+    "REGULATORY_QA_LEAD": {
+      "extra_credentials": ["COMPLIANCE_ADMIN_ATTESTATION"],
+      "allowed_verticals": ["PHARMA_ENTERPRISE", "MEDTECH_DEVICES", "BIOTECH_RND", "GENOMICS_DX"],
+      "safeguard_profile": "DETERMINISTIC_CITATION_STRICT", "audit_mode": "21_CFR_PART_11_ARCHIVE",
+      "ux_guardrail": "MODEL_SNAPSHOT_PINNED", "retention_floor": "ZERO_DATA_RETENTION"
+    }
+  },
+  "surfaces": {
+    "web":                {"requires": []},
+    "batch_api":          {"requires": []},
+    "ctms_connector":     {"requires": ["BAA_SIGNED"]},
+    "eln_lims_connector": {"requires": ["ADMIN_ROLE_BINDING"]}
+  },
+  "audit_modes_requiring_customer_held_log": ["IMMUTABLE_GXP_LOG", "21_CFR_PART_11_ARCHIVE"],
+  "downgrade_profile": "STANDARD_PUBLIC_SAFEGUARDS",
+  "claim_ttl_hours": 24
+}

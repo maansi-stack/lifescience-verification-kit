@@ -1,0 +1,11 @@
+expansion,workstream,owner_team,owner,depends_on,status,due,blocked_since,risk,next_decision,decision_owner,gate_ids
+EXP-001 [name],Surface parity matrix (ZDR/BAA/connectors per surface),Product,[name],,Not started,[date],,Surfaces differ in protections,Which surfaces are in scope,Sponsor,
+EXP-001 [name],Tier boundary and safeguard profile,Safeguards,[name],,Not started,[date],,Over- or under-calibration,Approve profile,Safeguards Lead,G1.1;G1.2
+EXP-001 [name],Verification intake and auto-checks,Identity/Provisioning,[name],Tier boundary,Not started,[date],,Auto-check coverage low,Which proofs count,Identity Lead,G2.1
+EXP-001 [name],Claim propagation and revocation,Identity/Provisioning,[name],Verification intake,Not started,[date],,Revocation lag,,,G2.2;G2.3
+EXP-001 [name],ZDR and retention verification,Platform,[name],Surface parity matrix,Not started,[date],,Hidden log or cache retention,,,G3.1
+EXP-001 [name],Audit/review requirement design,Platform;Legal,[name],,Not started,[date],,Legal sign-off late,Approve design,Legal,G3.2;G3.3
+EXP-001 [name],UX indicators and review gates per surface,Product,[name],Surface parity matrix,Not started,[date],,Inconsistent UX,,,G4.1
+EXP-001 [name],Manual review playbook and capacity,T&S Ops,[name],Tier boundary,Not started,[date],,Queue becomes bottleneck,,,G4.3;G4.4
+EXP-001 [name],Runbooks and escalation,T&S Ops;TPM,[name],,Not started,[date],,No on-call owner,,,G4.2
+EXP-001 [name],Launch gate review,TPM,[name],All gates,Not started,[date],,,Go/No-Go,Sponsor,All

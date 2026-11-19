@@ -1,0 +1,13 @@
+{
+  "cohort": "Wave 2: Pharma Clinical Trial Managers (web + batch API)",
+  "gates": [
+    {"id": "G1.1", "workstream": "Safeguards", "check": "Dual-use + clinical hallucination evals pass thresholds", "status": "PASS", "hard_blocker": true, "owner": "Safeguards Lead"},
+    {"id": "G1.2", "workstream": "Safeguards", "check": "Benign-utility non-refusal >= 98% on benchmark", "status": "PASS", "hard_blocker": true, "owner": "Safeguards Lead"},
+    {"id": "G2.1", "workstream": "Identity", "check": "Claim propagation + revocation purge < 60s in integration test", "status": "PASS", "hard_blocker": true, "owner": "Identity Eng"},
+    {"id": "G3.1", "workstream": "Platform Infra", "check": "ZDR log-scrub verification", "status": "PASS", "hard_blocker": true, "owner": "Platform Infra"},
+    {"id": "G3.2", "workstream": "Legal/Compliance", "check": "Customer-held audit sink design signed off", "status": "FAIL", "hard_blocker": true, "owner": "Regulatory Counsel"},
+    {"id": "G4.1", "workstream": "Product Surfaces", "check": "Safeguard-tier tooltip copy", "status": "FAIL", "hard_blocker": false, "owner": "Product Design"},
+    {"id": "G4.2", "workstream": "Product Surfaces", "check": "Runbooks + escalation SLAs published", "status": "NOT_STARTED", "hard_blocker": true, "owner": "TPM"}
+  ],
+  "waivers": []
+}
