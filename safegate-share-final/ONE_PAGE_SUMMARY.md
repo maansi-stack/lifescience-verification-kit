@@ -14,4 +14,3 @@
 
 **Open decisions it surfaces.** ZDR vs. immutable audit log, tier boundaries, per-surface parity of retention and review. Each has an owner and a gate.
 
-**Limits.** Independent artifact from public information. Targets are placeholders until baselines exist.
