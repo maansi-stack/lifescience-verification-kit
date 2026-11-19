@@ -1,6 +1,6 @@
-# SafeGate-AI v3: Life Sciences Verification Program Kit (TPM Edition)
+# SafeGate-AI: Life Sciences Verification Program Kit For TPMs
 
-A working kit for a TPM who owns a **verification program**: deciding who gets verified for elevated life-sciences capabilities, binding the right safeguards and data controls to them, and scaling that across personas, verticals, and product surfaces without bespoke work per customer.
+A working kit for a TPM who owns a **verification program for life sciences**: deciding who gets verified for elevated life-sciences capabilities, binding the right safeguards and data controls to them, and scaling that across personas, verticals, and product surfaces without bespoke work per customer.
 
 **Independent artifact.** This kit was written from public information and general program-management practice. It is not the organization process or system and does not describe any internal the organization tooling. Organizations and users in the code samples are fictional.
 
